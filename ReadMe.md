@@ -10,9 +10,7 @@
 1. Проверяем путь к менеджеру пакетов (в дальнейшем именуется как `$TOOLCHAIN`)  
   `vcpkg integrate install`
 1. Подготавливаем cmake к сборке в текущей директории
-   ```
-   cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=$TOOLCHAIN -G "Unix Makefiles" .
-   ```
+   `cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=$TOOLCHAIN -G "Unix Makefiles" .`
 1. Собираем проект  
   `cmake --build . --target all`
 1. Запускаем  
