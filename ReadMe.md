@@ -5,7 +5,7 @@
   `brew install cmake`
 *. Устанавливаем менеджер пакетов vcpkg 
   `brew install vcpkg`
-*. Проверяем путь к менеджеру пакетов (в дальнейшем именуется как $TOOLCHAIN)
+*. Проверяем путь к менеджеру пакетов (в дальнейшем именуется как $TOOLCHAIN)  
   `vcpkg integrate install`
 *. Загружаем зависимость restinio (веб-сервер)
   `vcpkg install restinio`
