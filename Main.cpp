@@ -1,8 +1,7 @@
 #include <iostream>
 #include <restinio/all.hpp>
 
-
 int main() {
-    std::cout << "Hello, World!" << std::endl;
-    return 0;
+  int x = 5;
+  std::cout << x;
 }

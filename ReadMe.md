@@ -1,17 +1,13 @@
-## Injector -- пример sql инъекции
+## Injector --заведомо не рабочий в реальности пример sql инъекции на C++ 
 
-### Как запускать на macOS из директории репозитория?
-1. Устанавливаем систему сборки cmake  
-   ```brew install cmake```
-1. Устанавливаем менеджер пакетов vcpkg  
+### Как собирать?
+1. Устанавливаем менеджер зависимостей vcpkg, например:  
    ```brew install vcpkg```
 1. Загружаем зависимость restinio (веб-сервер)  
    ```vcpkg install restinio```
-1. Проверяем путь к менеджеру пакетов (в дальнейшем именуется как `$TOOLCHAIN`)  
+1. Находим путь для параметра cmake `-DCMAKE_TOOLCHAIN_FILE`
    ```vcpkg integrate install```
-1. Подготавливаем cmake к сборке  
-   ```cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=$TOOLCHAIN -G "Unix Makefiles" .```
+1. Подготавливаем cmake к сборке используя подходящий cmake generator, например:
+   ```cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=см./пункт/выше -G "Unix Makefiles" .```
 1. Собираем проект  
    ```cmake --build . --target all```
-1. Запускаем  
-   ```./Injector```
