@@ -16,13 +16,13 @@
 1. Подготавливаем cmake к сборке с оптимизациями:  
    ```cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=см./пункт/выше -G "Unix Makefiles" -B bin``` 
    
-   Параметр `-G` отличается на разных ОС и зависит от внешних инструментов. Найти подходящий вам можно здесь:  
-   https://cmake.org/cmake/help/latest/manual/cmake-generators.7.html
+   Параметр `-G` отличается на разных ОС и зависит от внешних инструментов.  
+   Найти подходящий вам можно здесь: https://cmake.org/cmake/help/latest/manual/cmake-generators.7.html
 1. Собираем проект:  
    ```cmake --build bin --target all```
 
 ### Как запускать?
-* На Windows:  
-  В любом шелле запущенном от имени администратора: `Inject/Inject`
+* На Windows от имени администратора:  
+  `Inject/Inject`
 * На macOS, Linux:  
   `sudo Inject/Inject`
