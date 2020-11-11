@@ -14,7 +14,8 @@
    ```vcpkg integrate install```  
    Отображенный путь понадобится нам для передачи с параметром `-DCMAKE_TOOLCHAIN_FILE`
 1. Подготавливаем cmake к сборке с оптимизациями:  
-   ```cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=см./пункт/выше -G "Unix Makefiles" -B bin```  
+   ```cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=см./пункт/выше -G "Unix Makefiles" -B bin``` 
+   
    Параметр `-G` отличается на разных ОС и зависит от внешних инструментов. Найти подходящий вам можно здесь:  
    https://cmake.org/cmake/help/latest/manual/cmake-generators.7.html
 1. Собираем проект:  
