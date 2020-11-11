@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+  <title>Регистрация</title>
+</head>
+<body style="text-align: center">
+<form id="form" style="margin: 3%" action="javascript:register()">
+  <fieldset style="border: 0" id="fieldset">
+    <input style="font-size: large" type="text" placeholder="логин" id="login" required>
+    <input style="font-size: large" placeholder="пароль" id="password" required>
+    <p>
+      <button style="font-size: large" type="submit">зарегистрироваться</button>
+  </fieldset>
+</form>
+<a href="list" style="font-size: large">список зарегистрированных</a>
+<script>
+
+  const register = async () => {
+    const fieldset = document.getElementById("fieldset")
+    try {
+      fieldset.disabled = true
+      const login = document.getElementById("login").value
+      const password = document.getElementById("password").value
+      const hash = await sha256(password)
+      await api(`register?login=${login}&hash=${hash}`)
+      alert(`Пользователь ${login} успешно зарегистрирован`)
+    } catch (e) {
+      alert(`Произошла ошибка. ${e.message}`)
+    } finally {
+      document.getElementById("form").reset()
+      fieldset.disabled = false
+    }
+  }
+
+  const api = async (method) => {
+    const response = await fetch(`${location.origin}/${method}`)
+    if (response.ok) {
+      return response
+    } else {
+      throw JSON.parse(JSON.stringify(await response.json()))
+    }
+  }
+
+  const sha256 = async (message) => {
+    const msgUint8 = new TextEncoder().encode(message)
+    const hashBuffer = await crypto.subtle.digest("SHA-256", msgUint8)
+    const hashArray = Array.from(new Uint8Array(hashBuffer))
+    return hashArray.map(b => b.toString(16).padStart(2, '0')).join("")
+  }
+
+</script>
+</body>
+</html>
