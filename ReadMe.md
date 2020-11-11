@@ -8,8 +8,8 @@
 1. Устанавливаем менеджер C++ зависимостей vcpkg:  
    https://github.com/microsoft/vcpkg#getting-started  
    Не забудьте сделать команду vcpkg исполняемой в терминале.
-1. Загружаем с его помощью библиотеку веб-сервера restinio:  
-   ```vcpkg install restinio```
+1. Загружаем с его помощью библиотеку веб-сервера cpprestsdk:  
+   ```vcpkg install cpprestsdk```
 1. Находим путь к тулчейн-файлу для интеграции cmake с vcpkg:  
    ```vcpkg integrate install```  
    Отображенный путь понадобится нам для передачи с параметром `-DCMAKE_TOOLCHAIN_FILE`

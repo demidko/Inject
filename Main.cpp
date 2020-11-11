@@ -1,7 +1,8 @@
 #include <iostream>
 #include <restinio/all.hpp>
 
-int main(int argc, char **args) {
+int main() {
+
   restinio::run(
     restinio::on_thread_pool(4)
       .port(80)
