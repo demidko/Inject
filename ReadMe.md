@@ -23,6 +23,6 @@
 
 ### Как запускать?
 * На Windows от имени администратора:  
-  `Inject/Inject`
+  `bin/Inject`
 * На macOS, Linux:  
-  `sudo Inject/Inject`
+  `sudo bin/Inject`

@@ -1,10 +1,11 @@
 cmake_minimum_required(VERSION 3.17)
-project(Injector)
+project(Inject)
 set(CMAKE_CXX_STANDARD 20)
 add_executable(Inject Main.cpp)
 # RESTinio dependencies:
 # 1. ASIO or Boost::ASIO (goes as headers, vcpkg knows where)
 # 2. HTTP parser
+find_package(asio REQUIRED)
 find_package(unofficial-http-parser REQUIRED)
 # 3. fmtlib
 find_package(fmt REQUIRED)

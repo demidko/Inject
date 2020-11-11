@@ -2,7 +2,7 @@
 #include <restinio/all.hpp>
 
 int main(int argc, char **args) {
-  if (argc != 1) throw std::runtime_error("Usage: ");
+  if (argc != 1) throw std::runtime_error("Usage: Inject [port]\nExample: Inject 80");
   auto port = std::stoi(args[0]);
   restinio::run(
     restinio::on_thread_pool(4)
